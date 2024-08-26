@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <style>
+        h1{color:red}      
+        .test1{background-color: skyblue;} /*class -> . */
+        .test2{background-color: pink;}
+
+
+
+    </style> <!--style은 어디에 넣어도 상관 없지만, 보통 앞쪽에 작성함-->
+</head>
+<body>
+    css 우선순위 (중요) <br>
+    *(전체) < tag(1점) < class(10점) < id(100점) < !important(가장 높음)<!-- 해당 순서로 순위가 매겨짐-->
+    <h1 class="test1">test</h1>
+    <h1 id="test2" style="background-color: blue;">test2</h1> <!--h1의 attribute는 it, style임-->
+    <!--inline style이 우선순위 제일 높기에, blue로 잘 먹힌 걸 볼 수 있음-->
+    <script></script> <!--script는 보통 맨 마지막에 넣어줘야함-->
+</body>
+</html>
