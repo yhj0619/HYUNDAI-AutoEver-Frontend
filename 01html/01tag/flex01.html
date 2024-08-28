@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.17/jquery.bxslider.css" integrity="sha512-rV4fiystTwIvs71MLqeLbKbzosmgDS7VU5Xqk1IwFitAM+Aa9x/8Xil4CW+9DjOvVle2iqg4Ncagsbgu2MWxKQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <header class="hd"><!--w100%-->
@@ -23,23 +23,40 @@
                     <li><a href="#">재단소식</a></li>
                 </ul>
             </nav>
-            <ul class="sns">
+            
+            <!--<ul class="sns">
                 <li><i class="fa-brands fa-facebook-f"></i></li>
                 <li><i class="fa-brands fa-twitter"></i></li>
             </ul>
+            -->
         </div>
     </header> 
+
     <div class="visual bg-sky">
-<!-- banner images -->
-    <ul class="slide">
-        <li class="item st1">
-            <p class="title">
-                <strong>전국 장애학생 e페스티벌</strong>
-            </p>
-            <span class="subtxt">게임 안에서 하나 되는 모두의 축제</span>
-        </li>
-    </ul>
+        <!-- banner images -->
+        <ul class="slide">
+            <li class="item st1">
+                <div class="textWrap">
+                    <p class="title"> <strong>1게임아카데미</strong></p>
+                    <span class="subt">미래의 꿈 게임에 담다</span>
+                </div>
+                
+            </li>
+            <li class="item st2">
+                <div class="textWrap">
+                    <p class="title"><strong>2게임아카데미</strong></p>
+                    <span class="subt">미래의 꿈 게임에 담다</span>
+                </div>
+            </li>
+            <li class="item st3">
+                <div class="textWrap">
+                    <p class="title"><strong>3게임아카데미</strong></p>
+                    <span class="subt">미래의 꿈 게임에 담다</span>
+                </div>
+            </li>
+        </ul>
     </div>
+    
 
     <div class="textWrap01">
         <div class="container01">
@@ -56,7 +73,7 @@
             <div class="imgWrap">
                 <img src="./pageImages/sub01.jpg" alt="">   
             </div>
-            <div class="cart-text">
+            <div class="card-text">
                 <h4>문화 만들기</h4>
                 <p>게임을 기반으로 다양한 문화적 가치를 공유하고 누구나<br>
                 
@@ -68,7 +85,7 @@
             <div class="imgWrap">
                 <img src="./pageImages/sub02.jpg" alt="">   
             </div>
-            <div class="cart-text">
+            <div class="card-text">
                 <h4>인재 키우기</h4>
                 <p>
                     미래 문화 산업을 이끌어 갈 가능성 있는 인재들을 발굴하고<br>
@@ -81,7 +98,7 @@
             <div class="imgWrap">
                 <img src="./pageImages/sub03.jpg" alt="">   
             </div>
-            <div class="cart-text">
+            <div class="card-text">
                 <h4>마음 나누기</h4>
                 <p>
                     나눔이 가진 영향력과 가치를 알리고 쉽게 동참할 수 있는<br>                   
@@ -92,8 +109,8 @@
         </div>
     </div>
 
-    <div class="purposeWrap">
-        <div class="textBox">
+    <div class="purposeWrap intersect">
+        <div class="textBox ">
             <p>우리는 <b>문화적 가치를 확산</b>하여 우리 사회의<br>미래 경쟁력을 높여갑니다</p>
             <em>주요목적</em>
         </div>
@@ -104,6 +121,24 @@
         
     </div>
 
+    <div class="newsWrap">
+        <div class="news">
+            <div class="subArea">
+                <p class="title">재단소식</p>
+            </div>
+            <div class="categoryArea"></div>
+            <div class="contentArea"></div>
+        </div>
+    </div>
+
     <div class="top"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.17/jquery.bxslider.min.js" integrity="sha512-LaBO0tZh1+6Ebk+EnHt/WsGM0UnmkCXfQ1rfhGmpa5MXUdslNuSSELBRcteHKz4k4ny+Op10Ax2fPoTNq+VcUg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(".slide").bxSlider({
+           auto:true 
+        });
+    </script>
 </body>
 </html>
