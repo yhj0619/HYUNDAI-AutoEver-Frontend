@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 변수 let, const 
+    함수 arrow, function
+    배열 spread operator
+    반복문 for of / map 
+    class
+    promise 동기, 비동기 - async await ★★중요★★
+    module -->
+
+    <script>
+        // var test = 1; /*오류 탐지가 어려움. -> let, const 사용*/
+        
+        let han = 1;
+        // han = 10;
+        // console.log(han)
+
+
+        // const obj = function(){
+        //     console.log(han)
+        // }
+
+        const obj = (x,y)=>x*y
+
+        obj(10, 20);
+
+        const a = [1,2,3]
+        const b = [...a] //DEEP COPY임. b=a로 하면 안됨. 대괄호를 벗겨낸다는 의미로 ...사용
+        b[0] = 10
+        console.log("b: " + b);
+        console.log("a: " + a)
+
+        for(const item of a){
+            console.log(item)
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 0은 단위 없이 써도 무방. */
+
+        /* 쉼표 쓸 때 주의해야 함 하나의 태그 밑에 있더라도, 태그.class로 적어줘야함. */
+
+        *{margin: 0; padding: 0; box-sizing: border-box;}
+        
+        /*body의 높이를 움직이고 싶을 땐 html, body 둘 다 height: 100% 해줘야 함*/
+        html,
+        body{
+            height: 100%;
+        }
+        
+        body{
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .boxWrap{
+            width: 200px;
+            height:200px;
+            background-color: skyblue;
+            position: relative; /*가둘 때는 relative. display:block이랑 비슷함.*/
+            /* 좌표값을 따로 안적어도 이렇게 하면 됨. 
+                box1의 위치를 바꿀 때 얘기임.
+                box1의 좌표를 top: 0; left: 0;으로 따로 설정해줘도 이동 안 함. relative로 됨
+                box 안쪽은 + 밖은 -임.
+                부모는 relative, 자식은 absolute로 많이함. 절대적인 것은 아님
+            */
+            /* overflow: hidden; */
+            /* 이걸 적어 주면 큰 바운더리 밖으로 나간 부분은 안보임 */
+        
+            /* slide도 하나의 큰 상자에서 hidden과 이동(+-)함으로써 이동하는 것임 */
+        }
+
+        .boxWrap div{
+            width: 100px;
+            height: 100px;
+        }
+        .boxWrap .box1{
+            background-color: black;
+            /* position: absolute; /* 페이지 사이즈 달라져도 아무변화 없음 */
+            /* right: -50px; */ 
+            position: relative;
+            top: 50px;
+            left: 50px;
+        }
+
+        .boxWrap .box2{
+            background-color: red;
+            position: relative;
+            z-index: 1; 
+            /* z-index로 숫자 넘버링으로 올라오는 순위 정하기. */
+        }
+
+        .boxWrap .box3{
+            background-color: blue;
+            position: absolute;
+            top: 100px; left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="boxWrap">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+</body>
+</html>
