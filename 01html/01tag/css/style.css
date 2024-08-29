@@ -348,44 +348,41 @@ body{
 
 }
 
-/* 전체 컨텐츠 영역 */
 .contentArea {
     display: flex;
-    flex-direction: column; /* 수직으로 쌓이도록 설정 */
-    align-items: center; /* 중앙 정렬 */
+    flex-direction: column; 
+    align-items: center; 
     padding: 20px;
 }
 
-/* 카드 리스트 전체를 감싸는 ul */
 .cardWrap {
-    list-style-type: none; /* 불릿 포인트 제거 */
+    list-style-type: none; 
     padding: 0;
     margin: 0;
     width: 100%;
-    max-width: 1200px; /* 최대 너비를 설정하여 화면 양쪽에 여백 제공 */
+    max-width: 1200px; 
 }
 
-/* 각각의 카드 아이템 */
 .cardWrap .item {
-    background-color: #ffffff; /* 카드 배경색 */
-    margin: 20px 0; /* 각 카드 간의 수직 여백 */
-    padding: 20px; /* 카드 내 여백 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
-    border-radius: 8px; /* 카드 모서리를 둥글게 */
-    transition: transform 0.3s ease; /* 호버 시 애니메이션 */
+    background-color: #ffffff; 
+    margin: 20px 0; 
+    padding: 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    border-radius: 8px; 
+    transition: transform 0.3s ease; 
 }
 
-/* 호버 시 카드 움직임 */
+
 .cardWrap .item:hover {
-    transform: translateY(-5px); /* 위로 살짝 이동 */
+    transform: translateY(-5px);
 }
 
-/* 카드 내 텍스트 감싸는 요소 */
+
 .cardWrap .textWrap {
-    margin-bottom: 10px; /* 텍스트와 날짜 사이 여백 */
+    margin-bottom: 10px; 
 }
 
-/* 카드 제목 */
+
 .cardWrap .title {
     font-size: 1.5em; 
     font-weight: bold;
@@ -394,14 +391,12 @@ body{
     margin-bottom: 10px; 
 }
 
-/* 본문 텍스트 */
 .cardWrap .txt {
     font-size: 1em; 
     line-height: 1.6;
     color: #555;
 }
 
-/* 날짜와 공지사항 텍스트 */
 .cardWrap .date {
     font-size: 0.9em; 
     color: #888;
