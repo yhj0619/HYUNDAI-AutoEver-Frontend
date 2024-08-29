@@ -79,7 +79,7 @@ body{
     height: 100vh;
     min-height: 600px;
     margin: 0 auto 50px;
-    margin-bottom: 50px; /* Duplicate, only one margin-bottom needed */
+    margin-bottom: 50px;
 }
 
 .visual .item{
@@ -103,10 +103,34 @@ body{
     background-image: url(../pageImages/banner04.jpg);
 }
 
-.visual .item .textWrap{
-    width:auto;
-    padding-left: 20px;
+.visual .item .textWrap {
+    /* background-color: aqua; */
+    width: 1280px;
+    padding-left: 20px; /* 기존 값 유지 */
     color: white;
+    text-align: start; /* 텍스트 중앙 정렬 */
+    position: relative; /* 위치 조정을 위해 상대 위치 설정 */
+    top: 50%; /* 부모 요소의 절반 아래로 이동 */
+    transform: translateY(-250%); /* 텍스트를 수직 중앙에 오도록 조정 */
+}
+
+.visual .item .textWrap .title {
+    font-size: 5em; /* 타이틀 크기 조정 */
+    margin-bottom: 10px; /* 하단 마진 추가 */
+}
+
+.visual .item .textWrap .subt {
+    font-size: 1.5em; /* 서브 타이틀 크기 조정 */
+}
+
+.visaul .item .textWrap .title::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 70px;
+    height: 5px;
+    background-color: #ffd44a;
 }
 
 .top{
@@ -168,6 +192,7 @@ body{
 }
 
 .textWrap01 .container01 .title{
+    height: 210px;
     font-size: 44px;
     font-weight: 700;
     line-height: 1.41;
@@ -265,14 +290,22 @@ body{
 .newsWrap .news .subArea{
     padding-bottom: 20px;
     width: 1280px;
+    margin: 0 auto;
+    /* background-color: #00f; */
+    
 }
 
 .newsWrap .news .subArea .title{
+    width: 1280px;
+    /* background-color: red; */
+    margin-bottom: 20px;
     font-size: 44px;
     font-weight: 700;
     line-height: 1.41;
     letter-spacing: -2px;
     text-indent: -2px;
+    position: relative;
+    padding-bottom: 10px;
 }
 .newsWrap .news .subArea .title::after{
     content: "";
@@ -282,6 +315,97 @@ body{
     width: 70px;
     height: 5px;
     background-color: #ffd44a;
+    margin: 0 auto;
 }
 
+.newsWrap .news .categoryArea{
+    width: 1280px;
+    /* float: right; */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    height:aut6o;
+    justify-content: flex-end;
+}
 
+.newsWrap .news .categoryArea .on{
+    color: #1e1e1e;
+    background-color: #f0f1f2;
+}
+
+.newsWrap .news .categoryArea button{
+    display: inline-block;
+    height: 38px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 0 24px;
+    border-radius: 19px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 38px;
+    color: rgba(30, 30, 30, .5); 
+
+}
+
+/* 전체 컨텐츠 영역 */
+.contentArea {
+    display: flex;
+    flex-direction: column; /* 수직으로 쌓이도록 설정 */
+    align-items: center; /* 중앙 정렬 */
+    padding: 20px;
+}
+
+/* 카드 리스트 전체를 감싸는 ul */
+.cardWrap {
+    list-style-type: none; /* 불릿 포인트 제거 */
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 1200px; /* 최대 너비를 설정하여 화면 양쪽에 여백 제공 */
+}
+
+/* 각각의 카드 아이템 */
+.cardWrap .item {
+    background-color: #ffffff; /* 카드 배경색 */
+    margin: 20px 0; /* 각 카드 간의 수직 여백 */
+    padding: 20px; /* 카드 내 여백 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+    border-radius: 8px; /* 카드 모서리를 둥글게 */
+    transition: transform 0.3s ease; /* 호버 시 애니메이션 */
+}
+
+/* 호버 시 카드 움직임 */
+.cardWrap .item:hover {
+    transform: translateY(-5px); /* 위로 살짝 이동 */
+}
+
+/* 카드 내 텍스트 감싸는 요소 */
+.cardWrap .textWrap {
+    margin-bottom: 10px; /* 텍스트와 날짜 사이 여백 */
+}
+
+/* 카드 제목 */
+.cardWrap .title {
+    font-size: 1.5em; 
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin-bottom: 10px; 
+}
+
+/* 본문 텍스트 */
+.cardWrap .txt {
+    font-size: 1em; 
+    line-height: 1.6;
+    color: #555;
+}
+
+/* 날짜와 공지사항 텍스트 */
+.cardWrap .date {
+    font-size: 0.9em; 
+    color: #888;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
