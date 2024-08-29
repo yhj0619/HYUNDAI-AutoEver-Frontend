@@ -121,6 +121,7 @@ body{
 
 .visual .item .textWrap .subt {
     font-size: 1.5em; 
+}
 
 .visaul .item .textWrap .title::after{
     content: "";
@@ -371,16 +372,13 @@ body{
     transition: transform 0.3s ease; 
 }
 
-
 .cardWrap .item:hover {
     transform: translateY(-5px);
 }
 
-
 .cardWrap .textWrap {
     margin-bottom: 10px; 
 }
-
 
 .cardWrap .title {
     font-size: 1.5em; 
