@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="">
+   <head>
+      <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+      <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+      <title><%= htmlWebpackPlugin.options.title %></title>
+      <style>
+         /* 초기값들을 여기에 적어줌으로써 css 파일이 제대로 실행되도록 했음. */
+         html,
+         body {
+            height: 100%;
+         }
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+         }
+         ul,
+         li {
+            list-style: none;
+         }
+         a:link,
+         a:visited {
+            text-decoration: none;
+            color: black;
+         }
+      </style>
+   </head>
+   <body>
+      <noscript>
+         <strong
+            >We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
+            Please enable it to continue.</strong
+         >
+      </noscript>
+      <div id="app">
+         <!-- 이 사이에 App.vue 내용이 들어오는 것임. main.js에 #app이라고 적어둔 부분임. -->
+      </div>
+      <!-- built files will be auto injected -->
+   </body>
+</html>
