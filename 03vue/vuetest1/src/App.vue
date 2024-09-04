@@ -1,23 +1,13 @@
+<!-- App.vue가 메인. COmponenets의 data는 무조건 올려줘야 함. data 검색도 App.vue에 함수를 만들어야 함 -->
+
 <template>
    <NavbarView />
+   <SearchBarView :data="data_temp" @searchMovie="searchMovie" />
    <div class="container">
-      <h2 class="mb-10">HOT&NEW</h2>
-      <div class="cardWrap">
-         <div class="card" v-for="(item, i) in data" v-bind:key="i">
-            <div class="imgWrap">
-               <img v-bind:src="`./images/${item.img}`" v-bind:alt="`${item.img}`" />
-               <div class="hot" v-if="item.hoticon">HOT</div>
-            </div>
-            <div class="cardBody">
-               <h4>{{ item.title }}</h4>
-               <p>❤️ {{ item.num }}</p>
-               <p>구매 {{ item.won }}</p>
-               <p>👍 {{ item.like }} <button v-on:click="increaseLike(i)">클릭</button></p>
-            </div>
-            <div class="btn btn-primary" v-on:click="modalOpen(i)">상세보기</div>
-         </div>
-      </div>
+      <button @click="showAllView">전체보기</button>
    </div>
+
+   <MainView :data="data_temp" @increaseLike="increaseLike" @modalOpen="modalOpen" />
    <ModalView :data="data" :isModal="isModal" :num="selectedNum" @closeModal="closeM" />
    <!-- data()에서 작성한 data 변수명으로 동알하게 ""안에 작성하기-->
    <!-- @~ ="함수명" 이렇게 해서 자식에게 신호를 주는 것임. 자식은 data를 갖고있어서는 안됨. 부모가 자식에게 값을 줘야함.-->
@@ -29,16 +19,19 @@
 <script>
 import mdata from './assets/mdata';
 import NavbarView from './components/NavbarView.vue';
+import SearchBarView from './components/SearchBarView.vue';
 import ModalView from './components/ModalView.vue';
+import MainView from './components/MainView.vue';
 
 export default {
    name: 'appVue',
    data() {
       //data 관련 내용은 이곳에.
       return {
-         data: mdata,
+         data: mdata, //원래 데이터
          isModal: false,
          selectedNum: 0, //modal 오픈 시, 사용
+         data_temp: [...mdata], //변형 데이터
       };
    },
    methods: {
@@ -50,15 +43,29 @@ export default {
       modalOpen(num) {
          this.isModal = true;
          this.selectedNum = num;
+         console.log('view', num);
       },
       closeM() {
          this.isModal = false;
+      },
+      searchMovie(title) {
+         console.log('영화이름은' + title);
+         //filter를 적용하는건 원본데이터로 해야함. 바뀌는 값인 data_temp의 결과 값을 반환시키는 것.
+
+         this.data_temp = this.data.filter(movie => {
+            return movie.title.includes(title);
+         });
+      },
+      showAllView() {
+         this.data_temp = [...this.data];
       },
    },
 
    components: {
       NavbarView: NavbarView,
+      SearchBarView: SearchBarView,
       ModalView: ModalView,
+      MainView: MainView,
    },
 };
 </script>
