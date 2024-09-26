@@ -1,7 +1,10 @@
 <template>
-  <nav class="navbar navbar-expand-md bg-body-tertiary">
+  <nav class="navbar navbar-expand-md bg-body-tertiary custom-font">
     <div class="container">
-      <router-link class="navbar-brand" to="/">logo</router-link>
+      <router-link class="navbar-custom" to="/">
+        <i class="fa-solid fa-utensils"></i> Must-Go Restaurant List
+        <i class="fa-solid fa-utensils"></i>
+      </router-link>
       <button
         class="navbar-toggler"
         type="button"
@@ -32,4 +35,12 @@
 
 <script setup></script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.custom-font {
+  font-family: "Jua", sans-serif;
+  font-size: 30px;
+}
+.navbar-custom {
+  font-size: 30px;
+}
+</style>

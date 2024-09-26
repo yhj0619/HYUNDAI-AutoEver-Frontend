@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.visaul {
+  background: url(./assets/images/bgimg.jpg) no-repeat center;
+  background-size: cover;
+  
+}
